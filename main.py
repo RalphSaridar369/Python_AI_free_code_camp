@@ -3,7 +3,6 @@ print(tf.version)  # make sure the version is 2.x
 
 
 
-
 '''
 Tensors
 "A tensor is a generalization of vectors and matrices to potentially higher dimensions. Internally, TensorFlow represents tensors as n-dimensional arrays of base datatypes." (https://www.tensorflow.org/guide/tensor)
@@ -18,7 +17,6 @@ Shape: Represents the dimension of data.
 Just like vectors and matrices tensors can have operations applied to them like addition, subtraction, dot product, cross product etc.
 In the next sections we will discuss some different properties of tensors. This is to make you more familiar with how tensorflow represnts data and how you can manipulate this data.
 '''
-
 
 
 
@@ -65,6 +63,8 @@ rank2_tensor_2 = tf.Variable([["test", "ok", "ok"], ["test", "ok", "ok"], ["test
 rank3_tensor = tf.Variable([[["test", "ok", "ok"], ["test", "ok", "ok"], ["test", "ok", "ok"]]], tf.string)
 rank3_tensor_2 = tf.Variable([[["test", "ok", "ok"], ["test", "ok", "ok"], ["test", "ok", "ok"]],
                             [["test", "ok", "ok"], ["test", "ok", "ok"], ["test", "ok", "ok"]]], tf.string)
+
+
 
 print("rank of the 1st tensor: ", tf.rank(rank1_tensor))
 print("rank of the 2nd tensor: ", tf.rank(rank2_tensor))
