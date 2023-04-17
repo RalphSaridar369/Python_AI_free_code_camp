@@ -66,3 +66,39 @@ dftrain.age.hist(bins=20)
 dftrain.sex.value_counts().plot(kind='barh')
 dftrain['class'].value_counts().plot(kind='barh')
 pd.concat([dftrain, y_train], axis=1).groupby('sex').survived.mean().plot(kind='barh').set_xlabel('% survive')
+
+
+
+
+'''
+After analyzing this information, we should notice the following:
+
+Most passengers are in their 20's or 30's
+Most passengers are male
+Most passengers are in "Third" class
+Females have a much higher chance of survival
+
+
+
+
+Training vs Testing Data
+You may have noticed that we loaded two different datasets above. This is because when we train models, we need two sets of data: training and testing.
+
+The training data is what we feed to the model so that it can develop and learn. It is usually a much larger size than the testing data.
+
+The testing data is what we use to evaulate the model and see how well it is performing. We must use a seperate set of data that the model has not been trained on to evaluate it. Can you think of why this is?
+
+Well, the point of our model is to be able to make predictions on NEW data, data that we have never seen before. If we simply test the model on the data that it has already seen we cannot measure its accuracy accuratly. We can't be sure that the model hasn't simply memorized our training data. This is why we need our testing and training data to be seperate.
+
+
+
+
+Feature Columns
+In our dataset we have two different kinds of information: Categorical and Numeric
+
+Our categorical data is anything that is not numeric! For example, the sex column does not use numbers, it uses the words "male" and "female".
+
+Before we continue and create/train a model we must convet our categorical data into numeric data. We can do this by encoding each category with an integer (ex. male = 1, female = 2).
+
+Fortunately for us TensorFlow has some tools to help!
+'''
